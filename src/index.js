@@ -6,6 +6,7 @@ import App from './App';
 
 import configureStore from './store/configureStore'
 import {Provider} from 'react-redux'
+import { startSetUser } from './action/users';
 
 const store = configureStore()
 console.log(store.getState())
@@ -13,6 +14,8 @@ console.log(store.getState())
 store.subscribe(()=>{
     console.log(store.getState())
 })
+
+store.dispatch(startSetUser())
 
 const ele =(
     <Provider store={store}>
